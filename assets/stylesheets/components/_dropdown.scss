@@ -1,0 +1,39 @@
+@import '../abstracts/mixins/mixins-flex';
+@import '../abstracts/variables';
+@import '../abstracts/functions';
+
+.search-dropdown {
+  position: relative;
+  max-width: bu(642);
+
+  &__item {
+    @include flexbox;
+    @include flex-align-items(center);
+    background: linear-gradient(0deg, rgba(241, 241, 244, 0.3), rgba(241, 241, 244, 0.3)), #FFFFFF;
+    box-shadow: 0 1px 0 0 #CBCBE3;
+    border-top: 1px solid #CBCBE3;
+    padding: bu(10) bu(17);
+
+    &:last-of-type {
+      border-radius: 0 0 bu(4) bu(4);
+    }
+
+    &:hover {
+      background: linear-gradient(0deg, #F2FEFF, #F2FEFF), #FFFFFF;
+      box-shadow: 0 1px 0 #CBCBE3;
+      cursor: pointer;
+    }
+
+    .location-information {
+      margin-left: bu(15);
+    }
+
+    .location-suburb {
+      color: map-get($colours, 'storm-1');
+    }
+
+    .location-city {
+      color: map-get($colours, 'storm-5');
+    }
+  }
+}

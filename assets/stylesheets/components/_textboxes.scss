@@ -1,5 +1,4 @@
 @import '../abstracts/variables';
-@import '../abstracts/mixins/mixins-flex';
 
 .text-box-search {
   position: relative;
@@ -10,8 +9,9 @@
     height: bu(56);
     border-radius: bu(4);
     padding: bu(16);
-    color: map-get($colours, 'storm');
+    color: map-get($colours, 'storm-5');
     outline: none;
+    filter: drop-shadow(0 bu(16) bu(21) rgba(7, 0, 37, 0.22));
 
     &::placeholder {
       opacity: 1;

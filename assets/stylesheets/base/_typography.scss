@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600&display=swap');
 
 h3,
 .body-1,
@@ -18,4 +18,16 @@ h3 {
   font-size: bu(16);
   font-weight: 400;
   line-height: bu(24);
+}
+
+.location-suburb {
+  font-size: bu(14);
+  font-weight: 600;
+  line-height: bu(21);
+}
+
+.location-city {
+  font-size: bu(12);
+  font-weight: 400;
+  line-height: bu(18);
 }

@@ -1,15 +1,15 @@
 <template>
   <div class="home">
     <h3 class="home__text">See if we’re in your area</h3>
-    <Search></Search>
+    <AutoSearch></AutoSearch>
   </div>
 </template>
 
 <script>
-import Search from '@/components/Search'
+import AutoSearch from '../components/AutoSearch'
 export default {
   components: {
-    Search,
+    AutoSearch,
   },
 }
 </script>

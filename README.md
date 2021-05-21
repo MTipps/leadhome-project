@@ -1,6 +1,10 @@
-# leadhome-project
+# Leadhome Project
 
-## Build Setup
+## Requirements
+Create a page with the autocomplete search box as per the dev spec provided, and integrated with the API endpoint provided.
+
+
+## How to run locally
 
 ```bash
 # install dependencies
@@ -8,13 +12,4 @@ $ yarn install
 
 # serve with hot reload at localhost:3000
 $ yarn dev
-
-# build for production and launch server
-$ yarn build
-$ yarn start
-
-# generate static project
-$ yarn generate
 ```
-
-For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).

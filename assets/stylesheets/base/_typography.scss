@@ -1,1 +1,21 @@
-@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400&display=swap');
+
+h3,
+.body-1,
+.subtitle-1 {
+  font-family: map-get($fonts, 'source-sans'), sans-serif;
+}
+
+h3 {
+  font-size: bu(48);
+  font-weight: 300;
+  line-height: bu(56);
+  letter-spacing: -0.03em;
+}
+
+.body-1,
+.subtitle-1 {
+  font-size: bu(16);
+  font-weight: 400;
+  line-height: bu(24);
+}

@@ -1,0 +1,21 @@
+@import '../abstracts/variables';
+@import '../abstracts/mixins/mixins-flex';
+
+.button {
+  border: 1px solid transparent;
+
+  &__search {
+    @include flexbox;
+    @include flex-align-items(center);
+    @include flex-justify-content(center);
+    padding: bu(16);
+    height: bu(56);
+    background-color: map-get($colours, 'coral');
+    color: map-get($colours, 'white');
+    border-radius: 0 bu(4) bu(4) 0;
+
+    .search-icon {
+      margin-left: bu(3);
+    }
+  }
+}

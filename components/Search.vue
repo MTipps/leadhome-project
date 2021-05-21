@@ -1,8 +1,14 @@
 <template>
-  <section class="search">
-    <p class="search__text">See if we’re in your area</p>
-    <input type="text" class="search__textbox" />
-    <button class="search__button">Search</button>
+  <section class="text-box-search">
+    <input
+      type="text"
+      class="text-box-search__input body-1"
+      placeholder="Search for your suburb..."
+    />
+    <button class="button button__search subtitle-1 text-box-search__button">
+      Search
+      <img src="../assets/images/search.svg" alt="search" class="search-icon" />
+    </button>
   </section>
 </template>
 
@@ -12,4 +18,12 @@ export default {
 }
 </script>
 
-<style scoped></style>
+<style lang="scss" scoped>
+@import '../assets/stylesheets/abstracts/_functions.scss';
+@import '../assets/stylesheets/components/_buttons.scss';
+@import '../assets/stylesheets/components/_textboxes.scss';
+
+.text-box-search {
+  max-width: bu(642);
+}
+</style>

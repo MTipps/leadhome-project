@@ -1,0 +1,26 @@
+@import '../abstracts/variables';
+@import '../abstracts/mixins/mixins-flex';
+
+.text-box-search {
+  position: relative;
+  height: bu(56);
+
+  &__input {
+    width: 100%;
+    height: bu(56);
+    border-radius: bu(4);
+    padding: bu(16);
+    color: map-get($colours, 'storm');
+    outline: none;
+
+    &::placeholder {
+      opacity: 1;
+    }
+  }
+
+  &__button {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+}

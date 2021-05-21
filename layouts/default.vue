@@ -13,9 +13,9 @@
 
 html {
   @include flexbox;
-  @include flex-align-items(center);
   @include flex-justify-content(center);
   height: 100vh;
+  margin-top: bu(40);
   background-color: map-get($colours, 'mercury');
   font-family: map-get($fonts, 'source-sans');
 }

@@ -6,7 +6,7 @@ Create a page with the autocomplete search box as per the dev spec provided, and
 
 ## How to run locally
 
-Please remember to add a .env file to the project. A sample has been provided.
+Add a .env file to the project and add your Google Maps API Key. A sample file called .env.sample has been provided in the root folder.
 
 ```bash
 # install dependencies

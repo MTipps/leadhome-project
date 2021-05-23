@@ -5,7 +5,9 @@
 
 h3,
 .body-1,
-.subtitle-1 {
+.subtitle-1,
+.location-suburb,
+.location-city {
   font-family: map-get($fonts, 'source-sans'), sans-serif;
 }
 

@@ -12,8 +12,6 @@
 @import 'assets/stylesheets/base/_typography.scss';
 
 html {
-  @include flexbox;
-  @include flex-justify-content(center);
   height: 100vh;
   margin-top: bu(40);
   background-color: map-get($colours, 'mercury');

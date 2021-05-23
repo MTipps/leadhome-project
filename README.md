@@ -6,6 +6,8 @@ Create a page with the autocomplete search box as per the dev spec provided, and
 
 ## How to run locally
 
+Please remember to add a .env file to the project. A sample has been provided.
+
 ```bash
 # install dependencies
 $ yarn install

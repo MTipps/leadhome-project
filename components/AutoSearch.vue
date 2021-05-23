@@ -7,6 +7,7 @@
         class="text-box-search__input body-1"
         placeholder="Search for your suburb..."
         @input="getSearchResults"
+        @click="setShowSearchDropdown"
       />
       <button class="button button__search subtitle-1 text-box-search__button">
         Search
@@ -18,11 +19,15 @@
       </button>
     </section>
 
-    <div v-show="searchResults.length > 0" class="search-dropdown">
+    <div
+      v-show="searchResults.length > 0 && showSearchDropdown"
+      class="search-dropdown"
+    >
       <div
         v-for="result in searchResults"
         :key="result.id"
         class="search-dropdown__item"
+        @click="setSelectedSuburb(result)"
       >
         <img src="../assets/images/location.svg" alt="location" />
         <div class="location-information">
@@ -32,7 +37,28 @@
       </div>
     </div>
 
-    <p>map</p>
+    <GMap
+      id="gMap"
+      ref="gMap"
+      language="en"
+      :center="{ lat: selectedSuburb.latitude, lng: selectedSuburb.longitude }"
+      :options="{ fullscreenControl: false }"
+      :zoom="15"
+    >
+      <GMapMarker
+        :position="{
+          lat: selectedSuburb.latitude,
+          lng: selectedSuburb.longitude,
+        }"
+      >
+        <GMapInfoWindow :options="{ maxWidth: 200 }">
+          <code>
+            lat: {{ selectedSuburb.latitude }}, lng:
+            {{ selectedSuburb.longitude }}
+          </code>
+        </GMapInfoWindow>
+      </GMapMarker>
+    </GMap>
   </div>
 </template>
 
@@ -45,6 +71,11 @@ export default {
     return {
       query: '',
       searchResults: [],
+      selectedSuburb: {
+        latitude: -28.4793,
+        longitude: 24.6727,
+      },
+      showSearchDropdown: false,
     }
   },
   methods: {
@@ -53,8 +84,35 @@ export default {
         .$get(API_URL + this.query)
         .then((results) => {
           this.searchResults = results.items
+          this.showSearchDropdown = true
         })
         .catch((err) => console.log(err))
+    },
+    setSelectedSuburb(suburb) {
+      console.log(suburb.centerPoint)
+      this.selectedSuburb = suburb.centerPoint
+      // this.$refs.gMap.map = {
+      //   lat: this.selectedSuburb.latitude,
+      //   lng: this.selectedSuburb.longitude,
+      // }
+      // this.$refs.gMap.markers = {
+      //   lat: this.selectedSuburb.latitude,
+      //   lng: this.selectedSuburb.longitude,
+      // }
+      // console.log(this.$refs.gMap)
+      // this.$refs.gMap.map.setCenter(this.$refs.gMap.marker.getPosition())
+      this.showSearchDropdown = false
+      this.setMapCenter()
+    },
+    setMapCenter() {
+      this.$refs.gMap.map.setCenter({
+        lat: this.selectedSuburb.latitude,
+        lng: this.selectedSuburb.longitude,
+        zoom: 15,
+      })
+    },
+    setShowSearchDropdown() {
+      this.showSearchDropdown = true
     },
   },
 }

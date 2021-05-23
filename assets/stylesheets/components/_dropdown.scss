@@ -8,6 +8,7 @@
   height: 260px;
   overflow: hidden;
   overflow-y: scroll;
+  z-index: 1;
 
   &__item {
     @include flexbox;

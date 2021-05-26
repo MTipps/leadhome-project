@@ -1,5 +1,7 @@
 [![Netlify Status](https://api.netlify.com/api/v1/badges/350b62e7-aee9-4245-9782-d4665c6b8d3c/deploy-status)](https://app.netlify.com/sites/upbeat-ride-3ddcfc/deploys)
 
+Live Demo: https://leadhome-project.netlify.app/
+
 # Leadhome Project
 
 ## Requirements
